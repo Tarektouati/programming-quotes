@@ -1,0 +1,113 @@
+/*
+  elm-hot creates an additional div wrapper around the app to make HMR possible.
+  This could break styling in development mode if you are using Elm UI.
+
+  More context in the issue:
+    https://github.com/halfzebra/create-elm-app/issues/320
+*/
+[data-elm-hot='true'] {
+	height: inherit;
+}
+
+body {
+	margin: 0;
+	text-align: center;
+	background-color: #008fff;
+	color: #ffffff;
+	font-family: sans-serif;
+}
+
+.card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.twitter-username {
+	font-family: 'Abel', sans-serif;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 1%;
+}
+
+.quote {
+	font-size: 3.5vw;
+	font-weight: 500;
+	font-family: 'Playfair Display', serif;
+	text-align: center;
+	padding: 10%;
+}
+
+.author {
+	font-size: 2.5vw;
+	font-weight: lighter;
+	font-family: 'Abel', sans-serif;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	margin: 2% 0;
+}
+
+i {
+	border: solid #ffffff;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 2%;
+	margin: 0px 2%;
+}
+
+.right {
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+}
+
+.left {
+	transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+}
+
+
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 28px;
+    left: 28px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -1px;
+    left: -1px;
+    width: 58px;
+    height: 58px;
+    opacity: 0;
+  }
+}
+
+.loader {
+	height: 100%;
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	min-height: 90vh;
+}
+

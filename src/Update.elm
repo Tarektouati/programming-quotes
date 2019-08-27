@@ -22,7 +22,7 @@ update msg model =
         SetTweets result ->
             case result of
                 Ok tweets ->
-                    ( { model | tweets = [] }
+                    ( { model | tweets = tweets }
                     , Cmd.none
                     )
 
